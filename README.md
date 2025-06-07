@@ -271,12 +271,3 @@ Process everything in one line:
 # Clean the HTML and generate SQL in one command
 python clean_html.py -i original.html -o cleaned.html -v && python crawl_grade.py -i cleaned.html -o grades.sql -s simple -v
 ```
-
-## Troubleshooting
-
-- **Docker Issues**: If you have problems with Docker containers, check logs with `docker logs mysql` or `docker logs phpmyadmin`
-- **HTML Parsing Issues**: If the import script can't find the grades table, try using the clean_html.py script with different format options
-- **SQL Execution Errors**: Check that your MySQL server allows the SET FOREIGN_KEY_CHECKS=0 command
-- **Duplicate Key Errors**: With the simple INSERT script, you might get duplicate key errors if you're inserting records that already exist. In this case, use the `-s duplicate-key` option
-- **Character Encoding Issues**: If you see strange characters in the SQL output, try specifying a different encoding when reading the HTML file
-- **MySQL Warnings**: If you get a warning about `VALUES function is deprecated`, make sure you're using the latest version of the import tools which use the recommended alias syntax
