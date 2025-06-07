@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+bin/
+include/
+lib/
+pyvenv.cfg
+pip-selfcheck.json
+.env
+.venv
+venv/
+ENV/
+
+# Docker data volumes
+data/
+
+# Temporary files
+*.html
+temp*.htm
+clean_temp.html
+
+# Database dumps and temporary SQL files
+# Uncomment if you want to exclude SQL files from version control
+# *.sql
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log

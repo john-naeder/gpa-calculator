@@ -1,0 +1,30 @@
+services: 
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    container_name: UIAdmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=123
+    networks:
+      - dnetwork
+  mysql: 
+    image: mysql:8.3.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: GPA
+      MYSQL_COLLATION: utf8mb4_general_ci
+    ports:
+      - "3306:3306"
+    networks:
+      - dnetwork
+    volumes: 
+      - ./GPA.sql:/docker-entrypoint-initdb.d/GPA.sql
+
+networks:
+  dnetwork:
+    driver: bridge
