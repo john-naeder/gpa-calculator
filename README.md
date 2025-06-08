@@ -165,10 +165,7 @@ python crawl_grade.py -i clean_grades.html -o gpa_insert.sql -s duplicate-key -v
 - **Grade Import Tools**:
   - Extract grades from HTML grade reports
   - Generate SQL statements to insert or update grades in the database
-  - Two SQL generation styles available:
-    1. Simple INSERT statements (default)
-    2. INSERT with ON DUPLICATE KEY UPDATE statements (alternative version)
-  - Sets the semester (HocKi) field appropriately for all courses
+  - INSERT with ON DUPLICATE KEY UPDATE statements (alternative version)
   - Handles different HTML structures and encodings
 
 ## Database Structure and Configuration
@@ -234,8 +231,6 @@ ON DUPLICATE KEY UPDATE
     TKHP = new_values.TKHP,
     HocKi = new_values.HocKi;
 ```
-
-**Note:** For the ON DUPLICATE KEY UPDATE approach to work correctly, the `MaHocPhan` column in your database should have a unique index or be defined as a primary key.
 
 ## Advanced Usage
 
